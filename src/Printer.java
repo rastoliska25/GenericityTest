@@ -11,4 +11,5 @@ public class Printer<T extends Statue>{
 
 
 
+
 }

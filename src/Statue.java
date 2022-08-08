@@ -1,4 +1,4 @@
-public class Statue {
+public class Statue <T>{
 
     String name;
     int weight;
