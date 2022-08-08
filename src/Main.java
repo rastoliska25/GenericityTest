@@ -38,7 +38,18 @@ public class Main {
         sentence(100, new StoneStatue("StatueTwo", 2500));
         sentence(new WoodenStatue("StatueOne", 100), new MetalStatue("StatueTwo", 1000));
         sentence(new StoneStatue("StatueTwo", 2500), "statueTest");
-        sentence(new MetalStatue("StatueThree", 3000), new Random().nextInt(1,1000))
+        sentence(new MetalStatue("StatueThree", 3000), new Random().nextInt(1, 1000));
+
+        //wildCard test
+        WildCard wildCard = new WildCard();
+        List<Integer> listOfIntegers = new ArrayList<>();
+        List<Statue> listOfStatues = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            listOfIntegers.add(new Random().nextInt(1, 1000));
+            listOfStatues.add(new WoodenStatue("wildStatue " + new Random().nextInt(1, 10), new Random().nextInt(1, 1000)));
+        }
+        wildCard.printList(listOfIntegers);
+        wildCard.printList(listOfStatues);
     }
 
     private static <T, V> void sentence(T sentence, V secondSentence) {
