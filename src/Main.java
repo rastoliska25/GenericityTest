@@ -34,14 +34,14 @@ public class Main {
             System.out.println("\n");
         }
 
-        sentence("Hello");
-        sentence(100);
-        sentence(new MetalStatue("StatueOne", 100));
-        sentence(new StoneStatue("StatueTwo", 2500));
-        sentence(new MetalStatue("StatueThree", 3000));
+        sentence("Hello", new WoodenStatue("StatueOne", 100));
+        sentence(100, new StoneStatue("StatueTwo", 2500));
+        sentence(new WoodenStatue("StatueOne", 100), new MetalStatue("StatueTwo", 1000));
+        sentence(new StoneStatue("StatueTwo", 2500), "statueTest");
+        sentence(new MetalStatue("StatueThree", 3000), new Random().nextInt(1,1000))
     }
 
-    private static <T> void sentence(T sentence) {
-        System.out.println(sentence + "!!!");
+    private static <T, V> void sentence(T sentence, V secondSentence) {
+        System.out.println(sentence + " and " + secondSentence + "!!!!!!");
     }
 }
